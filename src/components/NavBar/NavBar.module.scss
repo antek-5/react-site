@@ -1,5 +1,7 @@
 @import '../../styles/settings.scss';
 
+
+
 .nav {
     background-color: darken($color-dark, 3%);
     height: 60px;
@@ -38,6 +40,10 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+
+                    .linkActive {
+                        color: $color-warning;
+                    }
                 }
                 
             }

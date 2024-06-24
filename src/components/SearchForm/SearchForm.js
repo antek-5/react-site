@@ -13,13 +13,14 @@ const SearchForm = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
+        setSearchStringSource(e.target.value)
         dispatch(updateSearchStr(searchStringSource));
     };
 
 
     return (
         <form className={styles.searchForm} onSubmit={handleSubmit}>
-            <TextInput value={searchStringSource} onChange={e => setSearchStringSource(e.target.value)} />
+            <TextInput value={searchStringSource} onChange={handleSubmit}/>
             <Button>
                 <span className="fa fa-search" />
             </Button>
