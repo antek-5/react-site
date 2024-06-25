@@ -2,18 +2,22 @@ import shortid from "shortid";
 
 // selectors
 export const getColumnsByList = ({ columns }, renderingListId) => {
-    const filteredColumns = columns.filter(column => parseInt(column.listId) === parseInt(renderingListId));
+    const filteredColumns = columns.filter(column => column.listId.toString() === renderingListId.toString());
     return(filteredColumns);
 }
 
 // actions
-export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
+const createActionName = actionName => `app/lists/${actionName}`;
+const ADD_COLUMN = createActionName('ADD_COLUMN');
+
 
 // action creators
+export const addColumn = payload => ({ type: ADD_COLUMN, payload });
+
 
 const columnsReducer = (statePart = [], action) => {
-    switch(action.type) {
-      case 'ADD_COLUMN':
+  switch(action.type) {
+      case ADD_COLUMN:
         return [...statePart, { ...action.payload, id: shortid() }];
       default:
         return statePart;
