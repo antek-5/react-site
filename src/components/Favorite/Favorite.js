@@ -1,7 +1,7 @@
 
 import PageTitle from "../PageTitle/PageTitle";
 import { useSelector } from "react-redux";
-import { getFavoriteCards } from "../../redux/store";
+import { getFavoriteCards } from "../../redux/cardsReducer";
 import Card from "../Card/Card";
 import styles from "./Favorite.module.scss";
 
@@ -11,7 +11,7 @@ const Favorite = () => {
 
     if(favCards.length === 0) return(
         <div className={styles.favContainer}>
-            <PageTitle>Favorite<br />(no favorites yet :c)</PageTitle>
+            <PageTitle>Favorite<br /><br />(no favorites yet :c)</PageTitle>
         </div>
     );
     else return(

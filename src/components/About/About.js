@@ -4,8 +4,7 @@ import PageTitle from "../PageTitle/PageTitle";
 const About = () => {
     return(
         <div>
-            <PageTitle>About</PageTitle>
-            <p>...</p>
+            <PageTitle>About<br /><br />...</PageTitle>
         </div>
     );
 }
